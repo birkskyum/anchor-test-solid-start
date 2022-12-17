@@ -3,10 +3,10 @@ import { A, createRouteData, useLocation, useRouteData, useSearchParams } from "
 
 export function routeData(){
 
-  const [searchParams, setSearchParams] = useSearchParams();
+  const location = useLocation();
 
   return createRouteData<number>(()=>{
-    return parseFloat(searchParams.test) * Math.round(Math.random()*10)
+    return parseFloat(location.query.test) * Math.round(Math.random()*10)
   })
 }
 
